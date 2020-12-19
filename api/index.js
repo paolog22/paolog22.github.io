@@ -1,4 +1,4 @@
-const baseUrl = 'http://api.timezonedb.com'
+const baseUrl = 'https://api.timezonedb.com'
 const prefix = 'v2.1'
 const key = '26H3ZTU1RPAB'
 
