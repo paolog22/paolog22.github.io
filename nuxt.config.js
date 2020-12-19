@@ -49,6 +49,6 @@ export default {
 
   // github pages config
   router: {
-    base: 'paolog22.github.io'
+    base: '/paolog22.github.io'
   }
 }
