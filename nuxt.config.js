@@ -45,5 +45,10 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+  },
+
+  // github pages config
+  router: {
+    base: 'paolog22.github.io'
   }
 }
