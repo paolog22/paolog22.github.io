@@ -3,7 +3,7 @@
     <div class="max-w-6xl mx-auto">
       <!-- Section Header -->
       <div class="section-header">
-        <div class="section-icon bg-blue-900/50 text-blue-400">&#127794;</div>
+        <div class="section-icon bg-blue-900/50 text-blue-400">🌲</div>
         <div>
           <h2 class="pixel-font text-blue-400 text-sm md:text-base glow-blue">SKILL TREE</h2>
           <p class="text-slate-500 text-sm mt-1">Abilities unlocked over 9+ years</p>
@@ -63,7 +63,7 @@ export default {
       skillCategories: [
         {
           name: 'Frontend',
-          icon: '&#127912;',
+          icon: '🎨',
           level: 95,
           titleColor: 'text-green-400',
           barColor: 'bg-green-500',
@@ -76,7 +76,7 @@ export default {
         },
         {
           name: 'Backend',
-          icon: '&#9881;',
+          icon: '⚙',
           level: 90,
           titleColor: 'text-blue-400',
           barColor: 'bg-blue-500',
@@ -89,7 +89,7 @@ export default {
         },
         {
           name: 'Mobile',
-          icon: '&#128241;',
+          icon: '📱',
           level: 78,
           titleColor: 'text-purple-400',
           barColor: 'bg-purple-500',
@@ -101,7 +101,7 @@ export default {
         },
         {
           name: 'DevOps & Cloud',
-          icon: '&#9729;',
+          icon: '☁',
           level: 82,
           titleColor: 'text-orange-400',
           barColor: 'bg-orange-500',

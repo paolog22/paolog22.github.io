@@ -111,17 +111,17 @@ export default {
       xpYears: 0,
       xpWidth: 0,
       stats: [
-        { icon: '&#128187;', value: '9+', label: 'Years EXP', color: 'text-green-400' },
-        { icon: '&#127919;', value: '6', label: 'Companies', color: 'text-blue-400' },
-        { icon: '&#128640;', value: '15+', label: 'Projects', color: 'text-purple-400' },
-        { icon: '&#127942;', value: '4', label: 'Cisco Certs', color: 'text-yellow-400' }
+        { icon: '💻', value: '9+', label: 'Years EXP', color: 'text-green-400' },
+        { icon: '🎯', value: '6', label: 'Companies', color: 'text-blue-400' },
+        { icon: '🚀', value: '15+', label: 'Projects', color: 'text-purple-400' },
+        { icon: '🏆', value: '4', label: 'Cisco Certs', color: 'text-yellow-400' }
       ],
       tags: [
-        { icon: '&#9889;', text: 'Vue.js Expert', class: 'text-green-400 border-green-800 bg-green-950' },
-        { icon: '&#9881;', text: 'Spring Boot', class: 'text-blue-400 border-blue-800 bg-blue-950' },
-        { icon: '&#128156;', text: 'Laravel', class: 'text-red-400 border-red-800 bg-red-950' },
-        { icon: '&#9729;', text: 'AWS / Docker', class: 'text-orange-400 border-orange-800 bg-orange-950' },
-        { icon: '&#128241;', text: 'Mobile Dev', class: 'text-cyan-400 border-cyan-800 bg-cyan-950' }
+        { icon: '⚡', text: 'Vue.js Expert', class: 'text-green-400 border-green-800 bg-green-950' },
+        { icon: '⚙', text: 'Spring Boot', class: 'text-blue-400 border-blue-800 bg-blue-950' },
+        { icon: '💜', text: 'Laravel', class: 'text-red-400 border-red-800 bg-red-950' },
+        { icon: '☁', text: 'AWS / Docker', class: 'text-orange-400 border-orange-800 bg-orange-950' },
+        { icon: '📱', text: 'Mobile Dev', class: 'text-cyan-400 border-cyan-800 bg-cyan-950' }
       ]
     }
   },

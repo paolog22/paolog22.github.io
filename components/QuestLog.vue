@@ -3,7 +3,7 @@
     <div class="max-w-4xl mx-auto">
       <!-- Section Header -->
       <div class="section-header">
-        <div class="section-icon bg-purple-900/50 text-purple-400">&#128220;</div>
+        <div class="section-icon bg-purple-900/50 text-purple-400">📜</div>
         <div>
           <h2 class="pixel-font text-purple-400 text-sm md:text-base glow-purple">QUEST LOG</h2>
           <p class="text-slate-500 text-sm mt-1">Completed missions &amp; campaigns</p>

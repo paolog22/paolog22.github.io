@@ -54,12 +54,12 @@ export default {
       mobileOpen: false,
       activeSection: 'hero',
       links: [
-        { id: 'hero', href: '#hero', icon: '&#127968;', label: 'Home' },
-        { id: 'skills', href: '#skills', icon: '&#127794;', label: 'Skills' },
-        { id: 'quests', href: '#quests', icon: '&#128220;', label: 'Quests' },
-        { id: 'achievements', href: '#achievements', icon: '&#127942;', label: 'Achievements' },
-        { id: 'inventory', href: '#inventory', icon: '&#128188;', label: 'Inventory' },
-        { id: 'contact', href: '#contact', icon: '&#9993;', label: 'Contact' }
+        { id: 'hero', href: '#hero', icon: '🏠', label: 'Home' },
+        { id: 'skills', href: '#skills', icon: '🌲', label: 'Skills' },
+        { id: 'quests', href: '#quests', icon: '📜', label: 'Quests' },
+        { id: 'achievements', href: '#achievements', icon: '🏆', label: 'Achievements' },
+        { id: 'inventory', href: '#inventory', icon: '💼', label: 'Inventory' },
+        { id: 'contact', href: '#contact', icon: '✉', label: 'Contact' }
       ]
     }
   },
