@@ -33,7 +33,10 @@
           class="inventory-slot"
           :title="item.name"
         >
-          <div class="text-2xl mb-2">{{ item.icon }}</div>
+          <div class="text-2xl mb-2 flex items-center justify-center h-8">
+            <i v-if="item.devicon" :class="item.devicon" style="font-size: 1.75rem;" />
+            <span v-else>{{ item.icon }}</span>
+          </div>
           <div class="text-xs text-slate-300 font-medium leading-tight">{{ item.name }}</div>
           <div class="mt-1">
             <div
@@ -57,50 +60,53 @@ export default {
       categories: ['All', 'Frontend', 'Backend', 'Mobile', 'DevOps', 'Database', 'Tools'],
       items: [
         // Frontend
-        { name: 'Vue.js', icon: '💚', stars: 5, category: 'Frontend' },
-        { name: 'Nuxt', icon: '⚡', stars: 5, category: 'Frontend' },
-        { name: 'JavaScript', icon: '🟡', stars: 5, category: 'Frontend' },
-        { name: 'TypeScript', icon: '🔵', stars: 4, category: 'Frontend' },
-        { name: 'Tailwind', icon: '💨', stars: 5, category: 'Frontend' },
-        { name: 'Vuetify', icon: '🎨', stars: 4, category: 'Frontend' },
-        { name: 'HTML5', icon: '📄', stars: 5, category: 'Frontend' },
-        { name: 'CSS3', icon: '🌈', stars: 5, category: 'Frontend' },
-        { name: 'Webpack', icon: '📦', stars: 4, category: 'Frontend' },
-        { name: 'Vite', icon: '⚡', stars: 4, category: 'Frontend' },
-        { name: 'jQuery', icon: '🔗', stars: 4, category: 'Frontend' },
-        { name: 'Bootstrap', icon: '🅱️', stars: 4, category: 'Frontend' },
+        { name: 'Vue.js', devicon: 'devicon-vuejs-plain colored', stars: 5, category: 'Frontend' },
+        { name: 'Nuxt', devicon: 'devicon-nuxtjs-plain colored', stars: 5, category: 'Frontend' },
+        { name: 'JavaScript', devicon: 'devicon-javascript-plain colored', stars: 5, category: 'Frontend' },
+        { name: 'TypeScript', devicon: 'devicon-typescript-plain colored', stars: 4, category: 'Frontend' },
+        { name: 'Tailwind', devicon: 'devicon-tailwindcss-plain colored', stars: 5, category: 'Frontend' },
+        { name: 'Vuetify', devicon: 'devicon-vuetify-plain colored', stars: 4, category: 'Frontend' },
+        { name: 'HTML5', devicon: 'devicon-html5-plain colored', stars: 5, category: 'Frontend' },
+        { name: 'CSS3', devicon: 'devicon-css3-plain colored', stars: 5, category: 'Frontend' },
+        { name: 'Webpack', devicon: 'devicon-webpack-plain colored', stars: 4, category: 'Frontend' },
+        { name: 'Vite', devicon: 'devicon-vitejs-plain colored', stars: 4, category: 'Frontend' },
+        { name: 'jQuery', devicon: 'devicon-jquery-plain colored', stars: 4, category: 'Frontend' },
+        { name: 'Bootstrap', devicon: 'devicon-bootstrap-plain colored', stars: 4, category: 'Frontend' },
         // Backend
-        { name: 'Spring Boot', icon: '🍃', stars: 4, category: 'Backend' },
-        { name: 'Laravel', icon: '🔴', stars: 5, category: 'Backend' },
-        { name: 'Express', icon: '🖥️', stars: 4, category: 'Backend' },
-        { name: 'NestJs', icon: '🐈', stars: 4, category: 'Backend' },
-        { name: 'AdonisJs', icon: '◆', stars: 3, category: 'Backend' },
-        { name: 'REST API', icon: '🚀', stars: 5, category: 'Backend' },
-        { name: 'GraphQL', icon: '🔮', stars: 3, category: 'Backend' },
-        { name: 'Firebase', icon: '🔥', stars: 4, category: 'Backend' },
+        { name: 'Spring', devicon: 'devicon-spring-plain colored', stars: 4, category: 'Backend' },
+        { name: 'Laravel', devicon: 'devicon-laravel-original colored', stars: 5, category: 'Backend' },
+        { name: 'Express', devicon: 'devicon-express-original', stars: 4, category: 'Backend' },
+        { name: 'NestJs', devicon: 'devicon-nestjs-original colored', stars: 4, category: 'Backend' },
+        { name: 'AdonisJs', devicon: 'devicon-adonisjs-original colored', stars: 3, category: 'Backend' },
+        { name: 'Node.js', devicon: 'devicon-nodejs-plain colored', stars: 5, category: 'Backend' },
+        { name: 'GraphQL', devicon: 'devicon-graphql-plain colored', stars: 3, category: 'Backend' },
+        { name: 'Firebase', devicon: 'devicon-firebase-plain colored', stars: 4, category: 'Backend' },
         // Mobile
-        { name: 'Flutter', icon: '🐦', stars: 4, category: 'Mobile' },
-        { name: 'CapacitorJS', icon: '🔋', stars: 4, category: 'Mobile' },
-        { name: 'NativeScript', icon: '📱', stars: 3, category: 'Mobile' },
-        { name: 'PWA', icon: '🌐', stars: 5, category: 'Mobile' },
+        { name: 'Flutter', devicon: 'devicon-flutter-plain colored', stars: 4, category: 'Mobile' },
+        { name: 'Dart', devicon: 'devicon-dart-plain colored', stars: 4, category: 'Mobile' },
+        { name: 'Android', devicon: 'devicon-android-plain colored', stars: 4, category: 'Mobile' },
+        { name: 'Apple', devicon: 'devicon-apple-original', stars: 4, category: 'Mobile' },
         // DevOps
-        { name: 'Docker', icon: '🐳', stars: 4, category: 'DevOps' },
-        { name: 'Kubernetes', icon: '☸', stars: 3, category: 'DevOps' },
-        { name: 'AWS', icon: '☁', stars: 4, category: 'DevOps' },
-        { name: 'Jenkins', icon: '⚙', stars: 4, category: 'DevOps' },
-        { name: 'Ansible', icon: '🔧', stars: 3, category: 'DevOps' },
-        { name: 'Linux', icon: '🐧', stars: 5, category: 'DevOps' },
-        { name: 'CI/CD', icon: '🔁', stars: 4, category: 'DevOps' },
+        { name: 'Docker', devicon: 'devicon-docker-plain colored', stars: 4, category: 'DevOps' },
+        { name: 'Kubernetes', devicon: 'devicon-kubernetes-plain colored', stars: 3, category: 'DevOps' },
+        { name: 'AWS', devicon: 'devicon-amazonwebservices-plain-wordmark colored', stars: 4, category: 'DevOps' },
+        { name: 'Jenkins', devicon: 'devicon-jenkins-plain colored', stars: 4, category: 'DevOps' },
+        { name: 'Ansible', devicon: 'devicon-ansible-plain colored', stars: 3, category: 'DevOps' },
+        { name: 'Linux', devicon: 'devicon-linux-plain', stars: 5, category: 'DevOps' },
+        { name: 'Ubuntu', devicon: 'devicon-ubuntu-plain colored', stars: 5, category: 'DevOps' },
+        { name: 'Bash', devicon: 'devicon-bash-plain', stars: 4, category: 'DevOps' },
         // Database
-        { name: 'MySQL', icon: '🐬', stars: 5, category: 'Database' },
-        { name: 'PostgreSQL', icon: '🐘', stars: 4, category: 'Database' },
-        { name: 'MongoDB', icon: '🍃', stars: 4, category: 'Database' },
-        { name: 'MS SQL', icon: '📊', stars: 3, category: 'Database' },
+        { name: 'MySQL', devicon: 'devicon-mysql-plain colored', stars: 5, category: 'Database' },
+        { name: 'PostgreSQL', devicon: 'devicon-postgresql-plain colored', stars: 4, category: 'Database' },
+        { name: 'MongoDB', devicon: 'devicon-mongodb-plain colored', stars: 4, category: 'Database' },
+        { name: 'MS SQL', devicon: 'devicon-microsoftsqlserver-plain colored', stars: 3, category: 'Database' },
         // Tools
-        { name: 'Git', icon: '📈', stars: 5, category: 'Tools' },
-        { name: 'JIRA', icon: '📋', stars: 4, category: 'Tools' },
-        { name: 'Cloudflare', icon: '☁', stars: 4, category: 'Tools' },
-        { name: 'Agile', icon: '🚀', stars: 4, category: 'Tools' }
+        { name: 'Git', devicon: 'devicon-git-plain colored', stars: 5, category: 'Tools' },
+        { name: 'GitHub', devicon: 'devicon-github-original', stars: 5, category: 'Tools' },
+        { name: 'JIRA', devicon: 'devicon-jira-plain colored', stars: 4, category: 'Tools' },
+        { name: 'Cloudflare', devicon: 'devicon-cloudflare-plain colored', stars: 4, category: 'Tools' },
+        { name: 'npm', devicon: 'devicon-npm-original-wordmark colored', stars: 5, category: 'Tools' },
+        { name: 'VS Code', devicon: 'devicon-vscode-plain colored', stars: 5, category: 'Tools' }
       ]
     }
   },
@@ -125,3 +131,17 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.inventory-slot i {
+  color: #94a3b8;
+}
+
+.inventory-slot i.colored {
+  color: inherit;
+}
+
+.inventory-slot:hover i {
+  filter: brightness(1.2);
+}
+</style>
