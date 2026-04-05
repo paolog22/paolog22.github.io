@@ -15,7 +15,7 @@
           class="nav-link"
           :class="{ active: activeSection === link.id }"
         >
-          {{ link.icon }} {{ link.label }}
+          {{ link.label }}
         </a>
       </div>
 
@@ -54,12 +54,12 @@ export default {
       mobileOpen: false,
       activeSection: 'hero',
       links: [
-        { id: 'hero', href: '#hero', icon: '🏠', label: 'Home' },
-        { id: 'skills', href: '#skills', icon: '🌲', label: 'Skills' },
-        { id: 'quests', href: '#quests', icon: '📜', label: 'Quests' },
-        { id: 'achievements', href: '#achievements', icon: '🏆', label: 'Achievements' },
-        { id: 'inventory', href: '#inventory', icon: '💼', label: 'Inventory' },
-        { id: 'contact', href: '#contact', icon: '✉', label: 'Contact' }
+        { id: 'hero', href: '#hero', label: 'Home' },
+        { id: 'skills', href: '#skills', label: 'Skills' },
+        { id: 'quests', href: '#quests', label: 'Quests' },
+        { id: 'achievements', href: '#achievements', label: 'Achievements' },
+        { id: 'inventory', href: '#inventory', label: 'Inventory' },
+        { id: 'contact', href: '#contact', label: 'Contact' }
       ]
     }
   },
