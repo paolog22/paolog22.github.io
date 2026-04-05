@@ -76,7 +76,7 @@ export default {
         },
         {
           name: 'Backend',
-          icon: '⚙',
+          icon: '⚙️',
           level: 90,
           titleColor: 'text-blue-400',
           barColor: 'bg-blue-500',
@@ -101,7 +101,7 @@ export default {
         },
         {
           name: 'DevOps & Cloud',
-          icon: '☁',
+          icon: '☁️',
           level: 82,
           titleColor: 'text-orange-400',
           barColor: 'bg-orange-500',

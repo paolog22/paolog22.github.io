@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="scanline-overlay" />
+    <div class="scanline-overlay" aria-hidden="true" />
     <GameNav />
     <main class="pt-14">
       <HeroSection />
@@ -12,7 +12,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-8 px-4 border-t border-slate-800 text-center">
+    <footer class="py-8 px-4 border-t border-slate-800 text-center" role="contentinfo">
       <p class="pixel-font text-slate-600" style="font-size: 0.55rem;">
         &copy; 2026 PAOLO GARCIA &mdash; BUILT WITH NUXT.JS + TAILWIND CSS
       </p>
@@ -25,6 +25,14 @@
 
 <script>
 export default {
+  head () {
+    return {
+      title: 'Paolo Garcia | Senior Full Stack Developer — 9+ Years Experience',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Paolo Garcia — Senior Full Stack Developer with 9+ years building web & mobile apps. Expert in Vue.js, Nuxt, Spring Boot, Laravel, Node.js, AWS, Docker. Open to opportunities in Europe & Germany.' }
+      ]
+    }
+  },
   mounted () {
     const observer = new IntersectionObserver(
       (entries) => {

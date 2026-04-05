@@ -118,9 +118,9 @@ export default {
       ],
       tags: [
         { icon: '⚡', text: 'Vue.js Expert', class: 'text-green-400 border-green-800 bg-green-950' },
-        { icon: '⚙', text: 'Spring Boot', class: 'text-blue-400 border-blue-800 bg-blue-950' },
+        { icon: '⚙️', text: 'Spring Boot', class: 'text-blue-400 border-blue-800 bg-blue-950' },
         { icon: '💜', text: 'Laravel', class: 'text-red-400 border-red-800 bg-red-950' },
-        { icon: '☁', text: 'AWS / Docker', class: 'text-orange-400 border-orange-800 bg-orange-950' },
+        { icon: '☁️', text: 'AWS / Docker', class: 'text-orange-400 border-orange-800 bg-orange-950' },
         { icon: '📱', text: 'Mobile Dev', class: 'text-cyan-400 border-cyan-800 bg-cyan-950' }
       ]
     }
