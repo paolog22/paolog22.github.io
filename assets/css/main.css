@@ -1,0 +1,356 @@
+/* ===== GAMIFIED PORTFOLIO - MAIN STYLES ===== */
+
+:root {
+  --pixel-font: 'Press Start 2P', monospace;
+  --body-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --bg-card-hover: #253449;
+  --border-color: #334155;
+  --accent-green: #22c55e;
+  --accent-blue: #3b82f6;
+  --accent-purple: #a855f7;
+  --accent-yellow: #eab308;
+  --accent-red: #ef4444;
+  --accent-cyan: #06b6d4;
+  --accent-orange: #f97316;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --xp-bar: #22c55e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--body-font);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Pixel font utility */
+.pixel-font {
+  font-family: var(--pixel-font);
+}
+
+/* ===== SCANLINE OVERLAY ===== */
+.scanline-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+}
+
+/* ===== FLOATING PARTICLES ===== */
+.particle {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  animation: float-particle 8s infinite;
+}
+
+@keyframes float-particle {
+  0% { opacity: 0; transform: translateY(100vh) scale(0); }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(-10vh) scale(1); }
+}
+
+/* ===== GAME CARD STYLE ===== */
+.game-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-green), var(--accent-blue), var(--accent-purple));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-card:hover {
+  border-color: var(--accent-green);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(34, 197, 94, 0.15);
+}
+
+.game-card:hover::before {
+  opacity: 1;
+}
+
+/* ===== XP BAR ===== */
+.xp-bar-track {
+  background: var(--bg-dark);
+  border-radius: 999px;
+  height: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.xp-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.xp-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: xp-shimmer 2s infinite;
+}
+
+@keyframes xp-shimmer {
+  100% { left: 100%; }
+}
+
+/* ===== SKILL BAR ===== */
+.skill-bar-track {
+  background: var(--bg-dark);
+  border-radius: 4px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== BADGE / ACHIEVEMENT ===== */
+.achievement-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid;
+  transition: all 0.2s ease;
+}
+
+.achievement-badge:hover {
+  transform: scale(1.05);
+}
+
+/* ===== QUEST TIMELINE ===== */
+.quest-timeline {
+  position: relative;
+  padding-left: 32px;
+}
+
+.quest-timeline::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-green), var(--accent-blue), var(--accent-purple));
+}
+
+.quest-node {
+  position: absolute;
+  left: -32px;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+  background: var(--bg-card);
+  border: 2px solid var(--accent-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.quest-node-inner {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+
+/* ===== TYPING CURSOR ===== */
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s infinite;
+  color: var(--accent-green);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ===== GLOW EFFECTS ===== */
+.glow-green { text-shadow: 0 0 10px rgba(34, 197, 94, 0.5); }
+.glow-blue { text-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
+.glow-purple { text-shadow: 0 0 10px rgba(168, 85, 247, 0.5); }
+
+/* ===== SECTION HEADERS ===== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.section-header .section-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== NAVIGATION ===== */
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--accent-green);
+  background: rgba(34, 197, 94, 0.1);
+}
+
+/* ===== PIXEL BORDER ===== */
+.pixel-border {
+  box-shadow:
+    inset -2px -2px 0 0 #0f172a,
+    inset 2px 2px 0 0 #475569,
+    inset -4px -4px 0 0 #334155,
+    inset 4px 4px 0 0 #64748b;
+}
+
+/* ===== INVENTORY GRID ===== */
+.inventory-slot {
+  background: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.inventory-slot:hover {
+  border-color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.05);
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .pixel-font {
+    font-size: 0.7em;
+  }
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ===== LEVEL UP ANIMATION ===== */
+@keyframes level-up {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); filter: brightness(1.5); }
+  100% { transform: scale(1); }
+}
+
+.level-up-anim {
+  animation: level-up 0.5s ease;
+}
+
+/* ===== STAT COUNTER ===== */
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stat-value {
+  animation: count-up 0.5s ease forwards;
+}
